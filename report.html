@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RELATÓRIO EXCLUSIVO - Christian Tattoo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        :root {
+            --purple: #8A2BE2;
+            --yellow: #FFD700;
+            --dark: #121212;
+            --light: #F8F8FF;
+            --font-title: 'Bebas Neue', cursive;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Raleway', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--dark);
+            color: var(--light);
+            margin: 0;
+            line-height: 1.6;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIwLDIwIFE1MCwxMCA4MCwyMCBUODAsODAgUTUwLDkwIDIwLDgwIFQyMCwyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOEEyQkUyIiBvcGFjaXR5PSIwLjE1IiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=');
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--purple) 0%, #4B0082 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--yellow);
+            box-shadow: 0 5px 30px rgba(138, 43, 226, 0.3);
+        }
+        
+        h1 {
+            font-family: var(--font-title);
+            font-size: 4rem;
+            margin: 0;
+            color: var(--yellow);
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(138, 43, 226, 0.7);
+        }
+        
+        h2 {
+            font-family: var(--font-heading);
+            color: var(--yellow);
+            border-left: 4px solid var(--purple);
+            padding-left: 1rem;
+            margin-top: 3rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .kpi-card {
+            background: rgba(18, 18, 18, 0.7);
+            border-radius: 12px;
+            padding: 2rem;
+            border-top: 5px solid var(--yellow);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .kpi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.3);
+        }
+        
+        .kpi-value {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            font-family: var(--font-heading);
+            background: linear-gradient(to right, var(--yellow), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .chart-container {
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            box-shadow: inset 0 0 20px rgba(138, 43, 226, 0.1);
+        }
+        
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-family: var(--font-body);
+        }
+        
+        .financial-table th {
+            background: var(--purple);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .financial-table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+        }
+        
+        .financial-table tr:nth-child(even) {
+            background: rgba(138, 43, 226, 0.05);
+        }
+        
+        .highlight {
+            color: var(--yellow);
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            background: linear-gradient(to right, var(--purple), #4B0082);
+            color: var(--light);
+            font-family: var(--font-heading);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RELATÓRIO EXCLUSIVO - Christian Tattoo</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Relatório de Performance • Abril 2025</p>
+    </header>
+    
+    <div class="container">
+        <!-- Seção de KPIs -->
+        <section>
+            <h2>📈 MÉTRICAS CHAVE</h2>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <h3>ROAS</h3>
+                    <div class="kpi-value">7.5x</div>
+                    <p>Retorno sobre investimento em publicidade</p>
+                </div>
+                <div class="kpi-card">
+                    <h3>ROI Líquido</h3>
+                    <div class="kpi-value">449.4%</div>
+                    <p>Lucro real sobre investimento</p>
+                </div>
+                <div class="kpi-card">
+                    <h3>Ticket Médio</h3>
+                    <div class="kpi-value">R$ 470.00</div>
+                    <p>Valor médio por sessão</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gráfico 1: Comparação Financeira -->
+        <section class="chart-container">
+            <h2>💵 ANÁLISE FINANCEIRA</h2>
+            <div id="financeChart" style="height: 400px;"></div>
+            <script>
+                var financeData = {
+                    labels: ['Receita Bruta', 'Custo Studio', 'Lucro Líquido'],
+                    values: [1880.0, 752.0, 1128.0],
+                    colors: ['#FFD700', '#8A2BE2', '#00FF7F']
+                };
+                
+                Plotly.newPlot('financeChart', [{
+                    values: financeData.values,
+                    labels: financeData.labels,
+                    type: 'pie',
+                    marker: {colors: financeData.colors},
+                    textinfo: 'label+value',
+                    insidetextorientation: 'radial',
+                    hoverinfo: 'label+percent',
+                    textfont: {size: 14, color: '#F8F8FF'},
+                    hole: .4,
+                    rotation: 45
+                }], {
+                    plot_bgcolor: 'rgba(18, 18, 18, 0)',
+                    paper_bgcolor: 'rgba(18, 18, 18, 0)',
+                    font: {color: '#F8F8FF'},
+                    showlegend: false,
+                    margin: {t: 30, b: 30}
+                });
+            </script>
+        </section>
+        
+        <!-- Tabela de Clientes Detalhada -->
+        <section>
+            <h2>✏️ DETALHAMENTO POR CLIENTE</h2>
+            <table class="financial-table">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Valor Bruto</th>
+                        <th>Custo Studio</th>
+                        <th>Lucro Líquido</th>
+                        <th>ROI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>Viviane</td>
+                        <td>R$ 600.00</td>
+                        <td>R$ 240.00</td>
+                        <td class="highlight">R$ 360.00</td>
+                        <td>573.7%</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Ana</td>
+                        <td>R$ 500.00</td>
+                        <td>R$ 200.00</td>
+                        <td class="highlight">R$ 300.00</td>
+                        <td>478.1%</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Júlia</td>
+                        <td>R$ 470.00</td>
+                        <td>R$ 188.00</td>
+                        <td class="highlight">R$ 282.00</td>
+                        <td>449.4%</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Natália</td>
+                        <td>R$ 250.00</td>
+                        <td>R$ 100.00</td>
+                        <td class="highlight">R$ 150.00</td>
+                        <td>239.0%</td>
+                    </tr>
+                    
+                    <tr style="background: rgba(138, 43, 226, 0.2);">
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>R$ 1,880.00</strong></td>
+                        <td><strong>R$ 752.00</strong></td>
+                        <td style="color: #00FF7F;"><strong>R$ 1,128.00</strong></td>
+                        <td><strong>449.4%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Seção de Projeções Futuras -->
+        <section class="chart-container">
+            <h2>🔮 PROJEÇÕES FUTURAS</h2>
+            <div id="projectionChart" style="height: 500px;"></div>
+            <script>
+                var projectionData = {
+                    scenarios: ["Conservador", "Realista", "Otimista"],
+                    clients: [6, 10, 15],
+                    revenue: [2820, 4700, 7050]
+                };
+                
+                var trace1 = {
+                    x: projectionData.scenarios,
+                    y: projectionData.clients,
+                    name: 'Novos Clientes',
+                    type: 'bar',
+                    marker: {color: '#FFD700'}
+                };
+                
+                var trace2 = {
+                    x: projectionData.scenarios,
+                    y: projectionData.revenue,
+                    name: 'Receita Estimada (R$)',
+                    type: 'bar',
+                    marker: {color: '#8A2BE2'},
+                    yaxis: 'y2'
+                };
+                
+                Plotly.newPlot('projectionChart', [trace1, trace2], {
+                    plot_bgcolor: 'rgba(18, 18, 18, 0)',
+                    paper_bgcolor: 'rgba(18, 18, 18, 0)',
+                    font: {color: '#F8F8FF'},
+                    barmode: 'group',
+                    margin: {t: 30, b: 100},
+                    legend: {orientation: 'h', y: -0.3},
+                    yaxis: {title: 'Número de Clientes'},
+                    yaxis2: {
+                        title: 'Receita (R$)',
+                        overlaying: 'y',
+                        side: 'right'
+                    }
+                });
+            </script>
+            
+            <table class="financial-table" style="margin-top: 2rem;">
+                <thead>
+                    <tr>
+                        <th>Cenário</th>
+                        <th>Novos Clientes</th>
+                        <th>Receita Estimada</th>
+                        <th>Lucro Estimado*</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>Conservador</td>
+                        <td>6</td>
+                        <td>R$ 2,820.00</td>
+                        <td>R$ 1,692.00</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Realista</td>
+                        <td>10</td>
+                        <td>R$ 4,700.00</td>
+                        <td>R$ 2,820.00</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Otimista</td>
+                        <td>15</td>
+                        <td>R$ 7,050.00</td>
+                        <td>R$ 4,230.00</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 1rem;">*Considerando 40% para studio</p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Christian Tattoo • Estilo Fineline Premium</p>
+        <p>Relatório gerado em 04/05/2025 | Acesso seguro</p>
+    </footer>
+</body>
+</html>
